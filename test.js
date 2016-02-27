@@ -17,7 +17,7 @@ button.addEventListener("click", function() {
   // The checkTree function below will test whether the fields are empty and if so, issue and alert. Note it is above tree();
   checkTree();
   // The tree function below initiates the function tree which is described below. 
-  tree();
+  tree(treeObj);
 });
 
 // This is the function that tests to see that both fields are not empty. If not filled, an alert throws that 
@@ -33,14 +33,16 @@ function checkTree() {
 
 // create an empty space variable for the function to work. 
 var spaces = " ";
+var symbolNumber = 1;
 
-// Below is my tree function. It is a deadsimple for loop. I was expecting to for the length of the height input, 
-// and then print to console the variable spaces, repeated the number that the loop falls on and then print the 
+// Below is my tree function. It is a deadsimple for loop.  
+
 function tree() {
   for (var i = 0; i <treeObj.height; i++) {
-    console.log( spaces.repeat(treeObj.height) + treeObj.char.repeat(1) );
-     treeObj.height - 1;
-     treeObj.char + 2; 
+    var treeCombo = spaces.repeat(treeObj.height) + treeObj.char.repeat(symbolNumber);
+    console.log(treeCombo);
+     treeObj.height --;
+     symbolNumber = symbolNumber + 2;
   }
 };
 
