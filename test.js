@@ -10,10 +10,8 @@ var treeObj = {
 // and that the character to use should be from user input in a <input type="text"> field in the DOM.
 var button = document.getElementById("btn");
 button.addEventListener("click", function() {
-  var heightVal = document.getElementById("heightNum").value;
-  var charVal = document.getElementById("sym").value;
-  treeObj.height = heightVal;
-  treeObj.char = charVal;
+  treeObj.height = document.getElementById("heightNum").value;
+  treeObj.char = document.getElementById("sym").value;
   // The checkTree function below will test whether the fields are empty and if so, issue and alert. Note it is above tree();
   checkTree();
   // The tree function below initiates the function tree which is described below. 
@@ -37,7 +35,7 @@ var symbolNumber = 1;
 
 // Below is my tree function. It is a deadsimple for loop.  
 
-function tree() {
+function tree(treeObj) {
   for (var i = 0; i <treeObj.height; i++) {
     var treeCombo = spaces.repeat(treeObj.height) + treeObj.char.repeat(symbolNumber);
     console.log(treeCombo);
