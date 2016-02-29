@@ -32,15 +32,16 @@ function checkTree() {
 // create an empty space variable for the function to work. 
 var spaces = " ";
 var symbolNumber = 1;
+var numSpaces;
 
 // Below is my tree function. It is a deadsimple for loop.  
 
 function tree(treeObj) {
   for (var i = 0; i <treeObj.height; i++) {
-    var treeCombo = spaces.repeat(treeObj.height) + treeObj.char.repeat(symbolNumber);
+    numSpaces = treeObj.height - (i + 1); 
+    var treeCombo = spaces.repeat(numSpaces) + treeObj.char.repeat(symbolNumber);
     console.log(treeCombo);
-     treeObj.height --;
-     symbolNumber = symbolNumber + 2;
+    symbolNumber = symbolNumber + 2;
   }
 };
 
